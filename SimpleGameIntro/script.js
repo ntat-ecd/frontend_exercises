@@ -13,7 +13,7 @@ videoOverlay.addEventListener('click', () => {
 
 const mainBanner = document.querySelector('.mainBanner');
 const otherImages = document.querySelectorAll('.otherImages img');
-const images = ['/img/bd1.webp', '/img/bd2.webp', '/img/bd3.webp', '/img/bd4.webp', '/img/bd5.webp', '/img/bd6.webp'];
+const images = ['./img/bd1.webp', './img/bd2.webp', './img/bd3.webp', './img/bd4.webp', './img/bd5.webp', './img/bd6.webp'];
 let timer;
 let index = 0;
 

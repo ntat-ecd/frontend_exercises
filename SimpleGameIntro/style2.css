@@ -1,15 +1,20 @@
-body {
-
-  width: 100%;
-  height: 100%;
-  background-color: rgb(17, 17, 17);
-  color: rgb(26, 26, 26);
-  margin: 0px;
-  position: static;
-  font-family: monospace;
-  outline: red 1px solid;
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* prevent horizontal scrollbar */
+  font-family: monospace;
+  background-color: rgb(17, 17, 17);
+  color: rgb(230, 230, 230);
+}
+
+/* === OVERLAY === */
 .videoOverlay {
   position: fixed;
   top: 0;
@@ -26,6 +31,8 @@ body {
 .hidden {
   display: none;
 }
+
+/* === HEADER === */
 .header {
   width: 100%;
   background-color: #14213d;
@@ -34,14 +41,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* padding: 5px; */
+  padding: 8px 16px;
   z-index: 1000;
 }
 .avatarImage {
   width: 50px;
-  height: auto;
+  height: 50px;
   border-radius: 50%;
-  margin: 8px;
+  margin-right: 10px;
   transition: 0.5s ease;
   transform-origin: top center;
 }
@@ -50,32 +57,31 @@ body {
 }
 .userName {
   color: #e5e5e5;
-  font-size: larger;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 10px;
 }
 .userName:hover {
   color: #fca311;
 }
-.heroImages {
-}
+
+/* === HERO SECTION === */
+.heroImages {}
 .featuredImage {
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
 }
 .featuredImage img {
   width: 40%;
   transition: opacity 0.5s ease;
 }
-
 .fade-out {
   opacity: 0;
 }
 .otherImages {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-wrap: wrap;
 }
 .otherImages img {
   width: 200px;
@@ -85,37 +91,38 @@ body {
   z-index: 10;
   transform-origin: bottom center;
 }
-
 .otherImages img:hover {
   z-index: 100;
   transform: scale(1.4);
 }
 
+/* === GAME CARD === */
 .gameCard {
-  width: 70%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
   display: flex;
-  justify-self: center;
-  font-size: large;
-  margin: 10px;
-}
-.gameCard {
-  display: flex;
-  /* gap: 75px; */
+  gap: 50px;
   color: whitesmoke;
-  font-size: x-large;
+  font-size: 1.25rem;
+  padding: 0 15px;
 }
-
 .gameCard h2 {
   color: #fca311;
-  font-size: xx-large;
+  font-size: 2rem;
   font-weight: bold;
 }
-/* .gameInfo {
-  flex-basis: 800px;
-} */
+.gameInfo {
+  flex: 1;
+  min-width: 300px;
+}
+.trailerBtnDiv {
+  display: flex;
+  align-items: center;
+}
 .trailerBtn {
   color: white;
-  font-size: larger;
+  font-size: 1rem;
   font-weight: bold;
   width: 140px;
   height: 60px;
@@ -123,11 +130,7 @@ body {
   border: 1px solid #5a3201;
   border-radius: 8px;
   margin: 20px auto;
-}
-
-.trailerBtnDiv{
-  display: flex;
-  align-items: center;
+  transition: 0.3s ease;
 }
 .trailerBtn:hover {
   color: #3b3b3b;
@@ -135,33 +138,29 @@ body {
   cursor: pointer;
 }
 
+/* === FOOTER === */
 .footer {
-  max-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: x-large;
+  font-size: 1.25rem;
   margin-top: 30px;
-  padding: 15px;
+  padding: 20px 15px;
   background-color: #e5e5e5;
+  color: #111;
 }
-
 .footer-map iframe {
   background-color: #14213d;
   transition: 0.5s ease;
   transform-origin: bottom center;
 }
-
 .footer-map iframe:hover {
   transform: scale(2);
 }
 
+/* === RESPONSIVE === */
 @media screen and (max-width: 575px) {
-  .container,
-  .gameCard {
-    width: 90%;
-    margin: 0;
-  }
   .header {
     justify-content: flex-start;
   }
@@ -175,9 +174,15 @@ body {
     width: 90%;
     height: 50%;
   }
+
   .gameCard,
   .footer {
     flex-direction: column;
-    font-size: large;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .gameCard {
+    gap: 20px;
   }
 }
